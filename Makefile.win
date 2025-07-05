@@ -1,0 +1,30 @@
+# Project: Project1
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = Untitled-1.o $(RES)
+LINKOBJ  = Untitled-1.o $(RES)
+LIBS =  -L"C:/Users/ishaa/OneDrive/Desktop/arduino/Dev-Cpp/lib"  
+INCS =  -I"C:/Users/ishaa/OneDrive/Desktop/arduino/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Users/ishaa/OneDrive/Desktop/arduino/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Users/ishaa/OneDrive/Desktop/arduino/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Users/ishaa/OneDrive/Desktop/arduino/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Users/ishaa/OneDrive/Desktop/arduino/Dev-Cpp/include/c++/3.4.2"  -I"C:/Users/ishaa/OneDrive/Desktop/arduino/Dev-Cpp/include" 
+BIN  = Project1.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Project1.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "Project1.exe" $(LIBS)
+
+Untitled-1.o: Untitled-1.c
+	$(CC) -c Untitled-1.c -o Untitled-1.o $(CFLAGS)
